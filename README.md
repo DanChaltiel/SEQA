@@ -7,3 +7,5 @@ Basée sur les annales officielles du CNCI, elle permet une correction rapide et
 Quelques autres outils plus ou moins utiles ont été ajoutés au fil du temps.
 
 N'hésitez pas à ajouter des pull requests ou à signaler les issues !
+
+Voici le lien de l'application [sur le Google Playstore](https://play.google.com/store/apps/details?id=com.dan.freeseqa).
