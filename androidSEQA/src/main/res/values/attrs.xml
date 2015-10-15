@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- SharedMenu -->
+    <attr name="ic_action_help" format="reference" />
+    <attr name="ic_action_retour" format="reference" />
+    <attr name="ic_action_about" format="reference" />
+	<!-- Menu Accueil -->
+    <attr name="ic_action_dummy" format="reference" />
+	<!-- Menu Annales -->
+    <attr name="ic_action_search" format="reference" />
+    <attr name="ic_action_edit" format="reference" />
+    <attr name="ic_action_save" format="reference" />
+    <attr name="ic_action_copy" format="reference" />
+	<!-- Menu Stats -->
+    <attr name="ic_action_share" format="reference" />
+	<!-- Préférences -->
+    <attr name="ic_logo_preferences" format="reference" />
+    <attr name="front_colour" format="reference" />
+    <attr name="back_colour" format="reference" />
+
+</resources>

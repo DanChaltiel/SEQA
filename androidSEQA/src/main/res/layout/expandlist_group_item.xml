@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#FF7C7C7C"
+    android:orientation="horizontal" >
+
+<TextView
+    android:id="@+id/session"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="30dp"
+    android:gravity="left"
+    android:paddingRight="20dp"
+    android:text="session"
+    android:textStyle="bold" />
+
+<TextView
+    android:id="@+id/QCM_categorie"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="right"
+    android:gravity="right"
+    android:text="catégorie"
+    android:textStyle="bold" />
+
+</LinearLayout>

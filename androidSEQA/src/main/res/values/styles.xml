@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="DarkTheme" parent="Theme.AppCompat">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="CustomThemeDark" parent="Theme.AppCompat">
+        <item name="ic_action_help" >@drawable/dark_ic_action_help</item>
+        <item name="ic_action_retour" >@drawable/dark_ic_action_return</item>
+        <item name="ic_action_about" >@drawable/dark_ic_action_about</item>
+        <item name="ic_action_search" >@drawable/dark_ic_action_search</item>
+        <item name="ic_action_edit" >@drawable/dark_ic_action_edit</item>
+        <item name="ic_action_save" >@drawable/dark_ic_action_save</item>
+        <item name="ic_action_copy" >@drawable/dark_ic_action_copy</item>
+        <item name="ic_action_share" >@drawable/dark_ic_action_share</item>
+        <item name="ic_logo_preferences" >@drawable/dark_ic_action_preference</item>
+        <item name="back_colour" >@color/black</item>
+        <item name="front_colour" >@color/white</item>
+    </style>
+
+    <style name="CustomThemeLight" parent="Theme.AppCompat.Light">
+        <item name="ic_action_help" >@drawable/light_ic_action_help</item>
+        <item name="ic_action_retour" >@drawable/light_ic_action_return</item>
+        <item name="ic_action_about" >@drawable/light_ic_action_about</item>
+        <item name="ic_action_search" >@drawable/light_ic_action_search</item>
+        <item name="ic_action_edit" >@drawable/light_ic_action_edit</item>
+        <item name="ic_action_save" >@drawable/light_ic_action_save</item>
+        <item name="ic_action_copy" >@drawable/light_ic_action_copy</item>
+        <item name="ic_action_share" >@drawable/light_ic_action_share</item>
+        <item name="ic_logo_preferences" >@drawable/light_ic_action_preference</item>
+        <item name="back_colour" >@color/white</item>
+        <item name="front_colour" >@color/black</item>
+    </style>
+</resources>

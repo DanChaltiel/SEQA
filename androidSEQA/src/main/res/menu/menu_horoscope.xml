@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:myapp="http://schemas.android.com/apk/res-auto" >
+    
+   <item
+        android:id="@+id/menu_trier"
+        myapp:showAsAction="ifRoom"
+        android:title="Trier">
+        <menu android:id="@+id/menu_subTrier" >
+            <item
+                android:id="@+id/menu_trier_lettre"
+                android:title="Par lettre"/>
+            <item
+                android:id="@+id/menu_trier_nombre"
+                android:title="Par nombre"/>
+        </menu>
+    </item>
+</menu>

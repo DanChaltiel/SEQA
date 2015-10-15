@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:myapp="http://schemas.android.com/apk/res-auto" >
+
+    <item
+        android:id="@+id/menu_correct"
+        myapp:showAsAction="always"
+        android:title="Corriger"/>
+    <!-- 
+    <item
+        android:id="@+id/menu_save"
+        android:icon="?attr/ic_action_save"
+        myapp:showAsAction="never"
+        android:title="(ToDo) Sauvegarder l'annale en l'état"/>
+    -->
+    <item
+        android:id="@+id/menu_copy"
+        android:icon="?attr/ic_action_copy"
+        myapp:showAsAction="always"
+        android:title="Copier">
+        <menu android:id="@+id/menu_subcopy" >
+            <item
+                android:id="@+id/menu_copy_question"
+                android:title="Copier la Question"/>
+            <item
+                android:id="@+id/menu_copy_items"
+                android:title="Copier les items"/>
+            <item
+                android:id="@+id/menu_copy_session"
+                android:title="Copier la session"/>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/menu_search"
+        android:icon="?attr/ic_action_search"
+        myapp:showAsAction="ifRoom"
+        android:title="Aller au fragment"
+        android:visible="false">
+        <menu android:id="@+id/menu_subsearch" >
+        </menu>
+    </item>
+    <item
+        android:id="@+id/menu_modify"
+        android:icon="?attr/ic_action_edit"
+        myapp:showAsAction="ifRoom"
+        android:title="Modifier"
+        android:visible="false">
+    </item>
+
+</menu>

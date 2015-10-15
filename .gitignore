@@ -1,0 +1,13 @@
+# Built application files
+/*/build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Toutes les merdouilles automatiques
+.gradle/
+.idea/
+build/
+gradle/
+gradlew
+gradlew.bat

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="ParcelCreator" severity="ignore" />
+    <issue id="RtlHardcoded">
+        <ignore path="res/layout/activity_modify.xml" />
+    </issue>
+    <issue id="RtlSymmetry">
+        <ignore path="res/layout/activity_modify.xml" />
+    </issue>
+</lint>

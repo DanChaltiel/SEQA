@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:myapp="http://schemas.android.com/apk/res-auto" >
+
+    <item
+        android:id="@+id/menu_share"
+        android:icon="?attr/ic_action_share"
+        myapp:showAsAction="ifRoom"
+        android:title="Partager">
+    </item>
+    
+</menu>

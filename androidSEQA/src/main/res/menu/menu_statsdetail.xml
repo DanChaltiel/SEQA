@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:myapp="http://schemas.android.com/apk/res-auto" >
+
+    <item
+        android:id="@+id/menu_share"
+        android:icon="?attr/ic_action_share"
+        myapp:showAsAction="ifRoom"
+        android:title="Partager">
+    </item>
+    
+   <item
+        android:id="@+id/menu_trier"
+        myapp:showAsAction="ifRoom"
+        android:title="Trier">
+        <menu android:id="@+id/menu_subTrier" >
+            <item
+                android:id="@+id/menu_trier_date"
+                android:title="Par date"/>
+            <item
+                android:id="@+id/menu_trier_note"
+                android:title="Par note"/>
+        </menu>
+    </item>
+</menu>

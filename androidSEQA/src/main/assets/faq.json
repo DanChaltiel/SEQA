@@ -1,0 +1,29 @@
+{
+    "faq": [
+        {
+            "question": "J'ai trouvé une erreur dans un des QCM, que dois-je faire ?",
+            "reponse": 
+"M'envoyer un email avec la bonne réponse (et si possible les sources justificatives)\
+Les données viennent d'un fichier pdf qui tournait quand je passait le concours et qui contient les annales du officielles du CNCI. Après, le CNCI n'est pas à l'abri de fautes de copie, et les profs de fautes tout court.\
+Si on ajoute les questions de recommandation périmées ou hors programme on peut enlever pas mal de trucs.\
+J'ai pensé à un système pour pallier ce problème mais c'est bien plus compliqué à mettre en place que prévu (serveur et tout...)"
+        },
+        {
+            "question": "J'aime pas Android, tu comptes faire une application pour iPhone/iPad ?",
+            "reponse": 
+"\Réponse courte : Sans doute jamais :-P\
+Réponse longue : Pour développer une application iPhone/iPad, il faut un Mac et pour mettre l'appli en ligne il faut payer 80€ par an (et accessoirement il faut apprendre à coder dans le bon langage). \
+Mais bon si tu décides de me payer payer tout ça, tu as mon e-mail hein !"
+        },
+        {
+            "question": "Il n'y a pas d'année 2008, t'as eu la flemme ?",
+            "reponse":
+"Non, pas exactement, il n'y a juste pas eu de session en 2008. De même qu'on a eu 2 sessions en 2014 en mai et en décembre, en 2008, l'internat est passé de décembre à mai (on est passé de décembre 2007 à mai 2009)."
+        },
+        {
+            "question": "J'ai une autre question",
+            "reponse":
+"Envoie moi un mail, elle a peut-être sa place ici, j'avoue que j'ai pas trop d'inspiration là ;-)"
+        }
+    ]
+}

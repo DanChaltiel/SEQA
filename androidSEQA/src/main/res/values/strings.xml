@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Global -->
+    <string name="short_app_name">SEQA</string>
+    <string name="long_app_name">Super Entraineur aux QCM des Annales</string>
+    
+
+    <!-- Menu ?? -->
+    <string name="mainMenu1">Accueil</string>
+
+    <!-- Titres -->
+    <string name="label_AccueilActivity">SEQA</string>
+    <string name="label_AnnaleSessionActivity">SEQA - Session</string>
+    <string name="label_AnnaleThemeActivity">SEQA - Thème</string>
+    <string name="label_EditAnnaleActivity">Édition</string>
+    <string name="label_AnnaleStatistiquesActivity">Statistiques</string>
+    <string name="label_AnnaleStatistiquesDetailActivity">Détail</string>
+    <string name="label_PreferencesActivity">Préférences</string>
+    <string name="label_AboutActivity">A propos du SEQA</string>
+    <string name="label_DonneesActivity">Donnees</string>
+    <string name="label_RechercheActivity">Recherche</string>
+    <string name="label_FAQActivity">Foire aux Questions</string>
+    <string name="label_HoroscopeActivity">Probabilités des items</string>
+    <string name="label_CountdownActivity">The Final Countdown</string>
+    <string name="label_ModeEmploiActivity">Mode d\'emploi</string>
+    <string name="label_BrowseEditionsActivity">Annales éditées</string>
+    <!-- Titres à faire... -->
+    <string name="label_VisiteActivity">Bienvenue</string>
+    
+    <!-- ChangeLog -->
+    <string name="changelog_full_title">Change Log</string>
+    <string name="changelog_title">Quoi de neuf ?</string>
+    <string name="changelog_ok_button">OK</string>
+    <string name="changelog_show_full">Afficher toutes les versions</string>
+    <string name="mnemoPharm_description">
+        MnemoPharm, c\'est un site internet communautaire très sympa permettant de partager facilement ses moyens mnémotechniques.\n\n
+        Fait par un étudiant quand il passait le concours, c\'est un moyen efficace pour retenir les listes présentes un peu partout dans les items de l\'internat.\n
+    </string>
+    <string name="label_MnemotechniqueActivity">Moyens mnémotechniques</string>
+
+    <string-array name="regions">
+        <item>Nord</item>
+        <item>Sud</item>
+    </string-array>
+
+    <string-array name="regions2014">
+        <item>Mai</item>
+        <item>Décembre</item>
+    </string-array>
+    
+    <string-array name="prefStats">
+        <item>Par semaine</item>
+        <item>Par mois</item>
+        <item>Par an</item>
+        <item>Toutes sessions</item>
+    </string-array>
+    
+    <string-array name="prefStatsAlias">
+        <item>semaine</item>
+        <item>mois</item>
+        <item>an</item>
+        <item>total</item>
+    </string-array>
+    
+    <string-array name="prefStyle">
+        <item>Noir</item>
+        <item>Blanc</item>
+    </string-array>
+    
+    <string-array name="prefStyleAlias">
+        <item>CustomThemeDark</item>
+        <item>CustomThemeLight</item>
+    </string-array>
+
+</resources>

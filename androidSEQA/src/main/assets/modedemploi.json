@@ -1,0 +1,118 @@
+{
+    "menuitem": [
+        {
+            "titre": "Annales par session",
+            "soustitre": "L'activité principale de cette application",
+            "contenu": "\
+Après avoir choisi la session, tu as 1h30 pour répondre à chaque question.<br/>\n\
+Tu peux naviguer via la barre de défilement (verticale ou horizontale selon l'orientation de l'écran), en \"swipant\" l'écran, c'est à dire en passant le doigt de droite à gauche, ou en cliquant sur les petites flèches ou sur la barre d'avancement.<br/>\
+La barre de menu te permet de : <br/>\
+	- copier les différents textes pour pouvoir partager facilement (icône papier)<br/>\
+	- lancer la correction<br/>\
+	- éditer le QCM, si tu penses avoir trouvé une erreur ou si tu veux ajouter un commentaire (icône crayon, seulement après correction)<br/>\
+<br/>\
+La correction calcule ton score et l'enregistre dans tes statistiques. Elle colorie également chaque QCM répondu en vert (2 points), jaune (1 point), orange (0.4 point) ou rouge (0 point).<br/>\
+Plutôt que de donner directement la réponse, j'ai trouvé plus pédagogique d'avoir à modifier les items sélectionnés jusqu'à trouver la bonne réponse (donc que le fond devienne vert).<br/>\
+À noter que le compte à rebours s'arrête si ton écran s'éteint ou si tu changes d'application.<br/>\
+			"
+        },
+        {
+            "titre": "Annales par thème",
+            "soustitre": "S'entrainer sur un thème spécifique",
+            "contenu": "\
+Même concept que le précédent, mais le temps n'est pas limité et la note ne prend en compte que le nombre de questions répondues<br/>\
+Bon du coup les notes dans les statistiques ne veulent pas dire grand chose...<br/>\
+Les thèmes viennent des annales officielles du CNCI, qui a malheureusement arrêté de classer à partir de 2009, ce qui laisse un affreux \"Catégorie à entrer manuellement\".<br/>\
+Il est possible de reclasser ces derniers items en les éditant, mais je ne suis pas sûr que ce soit très rentable.\
+			"
+        },
+        {
+            "titre": "Scores",
+            "soustitre": "Suivre sa progression",
+            "contenu": "\
+Les 2 onglets, \"Session\" et \"Thème\", fonctionnent de la même manière : chaque ligne indique la meilleure note obtenue, et la moyenne<br/>\
+La moyenne est calculée sur la semaine, le mois, l'année, ou l'infini selon les préférences<br/>\
+En cliquant sur une ligne, on accède au détail, avec un petit graphique et la liste de tous les essais sur cette session ou ce thème. Pratique pour savoir depuis combien de temps on n'a pas essayé !<br/>\
+La barre d'outil propose une option de tri par date ou par note obtenue<br/>\
+Par contre il reste quelques petits bugs, surtout sur les moyennes, nombres d'essai etc, il faudra que je m'y penche à l'occasion...\
+			"
+        },
+        {
+            "titre": "Données",
+            "soustitre": "Un menu secondaire",
+            "sous_menu": [
+                {
+                    "titre": "Recherche",
+					"contenu": "\
+						Rechercher un mot-clé dans une question.<br/>\
+						Permet de retrouver la question qu'on a vu, il y a longtemps, mais impossible de se souvenir en quelle année\
+					"
+                },
+                {
+                    "titre": "Horoscope",
+					"contenu": "\
+						Les probabilités de tomber de chaque item.<br/>\
+						Bon, il vaut mieux ne pas trop s'y fier, mais bon pour les questions où on a aucune idée...\
+					"
+                },
+                {
+                    "titre": "The Final Countdown",
+					"contenu": "\
+						Pour se mettre un petit coup de stress !<br/>\
+					"
+                },
+                {
+                    "titre": "Questions éditées",
+                    "contenu": "\
+						Revoir les questions dont on a changé un élément.<br/>\
+					"
+                },
+                {
+                    "titre": "Mode d'emploi",
+					"contenu": "\
+						On y est !\
+					"
+                }
+            ]
+        },
+        {
+            "titre": "Préférences",
+            "soustitre": "Les options",
+			"contenu": "\
+- <u>Surligner les mots-clés</u> : <br/>\
+\t Choisir si les mots tels que \"vrai\", \"faux\" etc seront surlignés dans le texte des questions. Permet de ne pas se faire avoir au début et de prendre de bonnes habitudes<br/>\
+- <u>Randomiser les items</u> : <br/>\
+\t Choisir si les QCM arrivent dans l'ordre normal, ou si elles sont randomisées. Surtout utile pour ceux qui préfèrent les questions par thème.<br/>\
+- <u>Affichage de la meilleure note</u> : <br/>\
+\t Conditionne aussi le choix de la méthode de calcul de la moyenne<br/>\
+- <u>Note minimale à compter</u> : <br/>\
+\t Permet d'éviter de compter les sessions arrêtées en plein milieu<br/>\
+- <u>Choix du thème</u> : <br/>\
+\t Selon le téléphone, l'application sera plus sympa en noir ou en blanc, au choix !<br/>\
+- <u>J'ai une idée</u> : <br/>\
+\t Permet de m'envoyer un e-mail avec une bonne idée pour l'application. Ou une super idée pour une autre application. Ou une question sur l'internat. Ou n'importe quoi en fait :-)<br/>\
+- <u>FAQ</u> : <br/>\
+\t Quelques questions-réponses plus ou moins utiles<br/>\
+- <u>Liker sur facebook</u> : <br/>\
+\t Ca me permet de faire connaitre mon application. Sinon un petit commentaire avec une bonne note sur le Google Playstore si tu aimes l'application, ça fait toujours plaisir !<br/>\
+- <u>A propos du SEQA</u> : <br/>\
+\t Informations techniques sur l'application, utiles à me communiquer en cas de bug par exemple.<br/>\
+- <u>Change Log</u> : <br/>\
+\t Pour les geeks qui veulent voir l'évolution de l'appli depuis la première version^^<br/>\
+			"
+        },
+        {
+            "titre": "Pour en savoir plus",
+            "soustitre": "D'où sort cette application ?",
+			"contenu": "\
+Un tout petit mot pour parler du contexte de cette application :-) <br/>\
+Au moment où j'ai lancé cette application, je venais de passer le concours de mai 2014.<br/>\
+J'ai été classé 222ème (avec 84/120 aux QCM, vu que c'est le thème ici), et j'ai choisi IPR Île de France pour pouvoir faire de la recherche et de l'enseignement.<br/>\
+En révisant le concours, j'ai trouvé que les QCM me faisaient perdre beaucoup trop de temps à faire et à corriger, surtout vu le peu de points qu'ils rapportaient.<br/>\
+Passionné d'informatique, je savais programmer en Java, notamment sur Android, et j'ai donc créé une petite appli pour pouvoir faire ça dans les transports ou dans mon lit et me corriger rapidement.<br/>\
+Les autres fonctionnalités sont venues après, au fil des idées et des conseils !\
+Depuis 2015, l'application est open-source et disponible sur <a href='https://github.com/DanChaltiel/SEQA'>GitHub</a>'!\
+			"
+        }
+    ]
+}

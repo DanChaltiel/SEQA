@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_item"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/transparent"
+    tools:context="com.dan.seqa.activity.annales.EditAnnaleActivity" >
+
+    <TextView
+        android:id="@+id/session"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:gravity="left"
+        android:paddingRight="20dp"
+        android:text="session"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/QCM_categorie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/session"
+        android:gravity="right"
+        android:text="catégorie"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:id="@+id/timeLeftLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/QCM_categorie" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?attr/front_colour" />
+
+            <TextView
+                android:id="@+id/QCM_question"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Question bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?attr/front_colour" />
+
+            <TextView
+                android:id="@+id/choix1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="A - " />
+
+            <TextView
+                android:id="@+id/choix2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="B - " />
+
+            <TextView
+                android:id="@+id/choix3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="C - " />
+
+            <TextView
+                android:id="@+id/choix4"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="D - " />
+
+            <TextView
+                android:id="@+id/choix5"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="E - " />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?attr/front_colour" />
+
+            <TextView
+                android:id="@+id/correction"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Réponse : ABE"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?attr/front_colour" />
+
+            <TextView
+                android:id="@+id/commentaire"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Commentaire :"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/button_annuler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/timeLeftLayout"
+        android:text="Annuler" />
+
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/button_annuler"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/timeLeftLayout"
+        android:text="Sauvegarder" />
+
+</RelativeLayout>

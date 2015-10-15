@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:robobunny="http://robobunny.com"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dan.seqa.activity.PrefActivity">
+
+    <PreferenceCategory android:title="Options des Annales" >
+        <SwitchPreference
+            android:key="surligner"
+            android:title="Surligner les mot-clés"
+            android:summaryOff="Ne pas surligner les mots \'vrai\', \'faux\', \'exacte\', \'inexacte\', etc..."
+            android:summaryOn="Surligner les mots \'vrai\', \'faux\', \'exacte\', \'inexacte\', etc..."
+            android:defaultValue="false"
+            android:switchTextOff="Non"
+            android:switchTextOn="Oui" />
+        <SwitchPreference
+            android:key="randomize"
+            android:title="Randomiser les items"
+            android:summaryOff="Les questions apparaitront dans l\'ordre"
+            android:summaryOn="Les questions n\'apparaitront pas dans l\'ordre"
+            android:switchTextOff="Non"
+            android:switchTextOn="Oui" />	        
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Options des Statistiques" >
+        <ListPreference 
+		    android:key="statsTimeChoice"
+		    android:title="Affichage de la meilleure note"
+            android:summary="Actuellement : xxx"
+            android:defaultValue="total"
+		    android:entries="@array/prefStats"
+		    android:entryValues="@array/prefStatsAlias"/>
+        <com.dan.seqa.outils.SeekBarPreference
+            android:defaultValue="1"
+            android:key="minStatsValue"
+            android:title="Note minimale à compter"
+            android:max="120"
+            robobunny:min="1"
+            robobunny:unitsLeft=""
+            robobunny:unitsRight="/120" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Options Graphiques" >
+        <SwitchPreference
+            android:key="themeChoiceSwitch"
+            android:title="Choix du thème" 
+            android:defaultValue="true"
+            android:switchTextOff="Noir"
+            android:switchTextOn="Blanc" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Informations" >
+        <Preference
+            android:key="emailButton"
+            android:summary="M\'envoyer un e-mail de proposition d\'amélioration"
+            android:title="J'ai une idée !" />        
+        <Preference
+            android:key="faqButton"
+            android:title="FAQ"
+            android:summary="Foire aux Questions" />
+        <Preference
+            android:key="modeEmploi"
+            android:title="Mode d'emploi"
+            android:summary="Parce que l'application commence à prendre du poids..." />
+        <Preference 
+            android:key="likeButton"
+            android:summary="Lien vers la page facebook du SEQA"
+            android:title="Liker sur facebook" >
+        </Preference>
+        <Preference
+            android:key="gitHubButton"
+            android:title="Code source"
+            android:summary="Code de l'application sur GitHub">
+            <intent android:action="android.intent.action.VIEW"
+                    android:data="https://github.com/DanChaltiel/SEQA" />
+        </Preference>
+        <Preference
+            android:key="aboutButton"
+            android:title="À propos du SEQA" />
+        <Preference
+            android:key="changeLogButton"
+            android:title="Change Log"
+            android:summary="Quoi de neuf depuis la nouvelle version ?" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

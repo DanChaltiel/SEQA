@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/detailStatTitreGeneral"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Général"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/detailStatSubTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Moyenne, sur x essais" />
+
+    <LinearLayout
+        android:id="@+id/layoutForGraphique"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="vertical" >
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/detailStatTitreDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Détails"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ListView
+        android:id="@+id/listDetailStats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+</LinearLayout>

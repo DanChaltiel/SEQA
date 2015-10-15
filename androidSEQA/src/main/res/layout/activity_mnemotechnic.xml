@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dan.seqa.activity.donnees.MnemotechniqueActivity">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView"
+        android:layout_gravity="center_horizontal">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:id="@+id/imageView"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="Logo MnemoPharma"
+                android:background="@drawable/mnemopharm_logo"
+                android:layout_weight="1" />
+
+            <me.biubiubiu.justifytext.library.JustifyTextView
+                android:id="@+id/text"
+                android:text="@string/mnemoPharm_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:text="Accéder au site web"
+                android:id="@+id/button_goto_mnemopharm"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:padding="25dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

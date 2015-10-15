@@ -1,0 +1,245 @@
+<html>
+	<head>
+		<style type='text/css'>
+			 a            { color:#a0a0e0 }
+			div.title    { 
+				color:#C0F0C0; 
+				font-size:1.2em; 
+				font-weight:bold; 
+				margin-top:1em; 
+				margin-bottom:0.5em; 
+				text-align:center 
+			}
+			div.subtitle { 
+				color:#C0F0C0; 
+				font-size:0.8em; 
+				margin-bottom:1em; 
+				text-align:center 
+			}
+			div.freetext { color:#F0F0F0 }
+			div.list     { color:#C0C0F0 }
+		</style>
+	</head>
+	<body>
+			<!--
+				First input HTML as writing a web page until the body-Tag. Here you can enter CSS for div.title, div.subtitle, div.freetext and div.list (see below) and any other elements you should be using, e.g. links.
+				To begin a section for any version start the line with a $ sign followed by the version. This line will not be displayed in the dialog but it is important for Android Change Log for knowing what to display and what not. It corresponds to the versionName in the AndroidManifest.xml.
+				% begins a line of a version section title.
+				_ begins a line of a version section subtitle.
+				! begins a line of free text.
+				# begins a line within a numbered list.
+				* begins a line within a bullet list.
+				Lines beginning without any of these signs (for example the HTML at the beginning of changelog.txt) will be used as they are.
+				You can use HTML anywhere you want.
+				Insert a line containing "$ END_OF_CHANGE_LOG" after the last version section.
+				After that you should enter HTML again, at least the end-body-tag and the end-html-tag.
+				You can indent lines, but you don't have to.
+				You don't need to use these special symbols, you can write your log completely in HTML. Only the lines beginning with $-signs are mandatory if you want to be able to only display what's new instead of a full change log.
+			-->
+
+			$ 3.0
+				% Version 3.0 (Ivacaftor)
+				_ 15/07/2014
+					* Changement de logiciel de développement (Eclipse --> Android Studio !)
+					* Ajout de la fonction d'édition des items
+					* Ajout du navigateur d'éditions effectuées
+					* Ajout du mode d'emploi
+					* Amélioration du changelog
+				/GEEK :
+				/	* externalisation des fichiers de FAQ et du mode d'emploi dans les assets
+
+			$ 2.7
+				% Version 2.7
+				_ 15/07/2014
+					* Les annales par thème ne notent plus que sur le nombre de questions répondues
+					* Ajout du bouton Like (facebook)
+					* Correction du bug de base de données avec les vieux Android
+				/GEEK :
+                /	* Try/catch sur le databaseFeeder
+
+			$ 2.6
+				% Version 2.6 
+				_ 15/07/2014
+					* Quelques changements d'architecture interne
+					* 1ère version officiellement sur le playstore !!
+				/GEEK :
+                /	* Abstractisation de l'AnnaleActivity
+				/	* Amélioration de AnnaleModele : incorporation du theme et de la session, parcelabilisation
+				/	* Parcelabilisation des Items aussi
+				/	* Organisation des activités par dossiers
+				/	* Changement du nom du package
+			
+			$ 2.5
+				% Version 2.5 (Infliximab)
+				_ 09/07/2014
+					* Ajout de la fonction de recherche
+					* Ajout du final countdown (tidoudi touuu tidoudi ti tiiii...)
+					* Déplacement avec l'horoscope dans le menu "données"
+					* Correction de bugs
+				/GEEK :
+                /	* Suppression définitive du système de licence dans AccueilActivity
+			$ 2.4
+				% Version 2.4 
+				_ 05/07/2014
+					* Ajout de l'horoscope
+					* Ajout du surlignage
+					* Thème blanc par défaut
+					* Ajout de la searchList en paysage, ajout des couleurs
+					* Correction directement au changement de réponse
+					* Correction du bug fatal sur les versions HoneyCoombs (Android 2.3.3)
+					* Version beta sur le playstore :-)
+				/GEEK :
+                /	* Essai d'une searchList de bouttons en pas landscape... bof moyen...
+				/	* Arret d'utilisation d'ActionBarSherlock
+			$ 2.3
+				% Version 2.3 
+				_ 16/12/2013
+					* Prise en charge du mode paysage dans les annales (avec liste additionnelle)
+					* Ajout de préférences pour les scores
+					* Ebauche d'autres préférences
+					* Amélioration/correction du décompte du temps
+					* Correction de bugs d'affichage dans les scores
+				/GEEK :
+                /	* Externalisation de la bibliothèque d'outils
+				/	* AnnaleTimer compte le temps en absolu et plus en dynamique (évite les décalages dus au temps de calcul)
+				/	* Retrait du Parser XML
+			$ 2.2
+				% Version 2.2 
+				_ 24/07/2013
+					* Ajout des graphiques dans les statistiques
+					* Correction du petit bug de coloration à la correction
+				/GEEK :
+                /	* Légère réécriture des fragments
+				/	* Essai d'implémentation Facebook (Class Test)
+			$ 2.1
+				% Version 2.1 
+				_ 16/07/2013
+					* Ajout de la moyenne hebdomadaire dans les statistiques, avec indicateur en étoiles et compteur d'instances
+					* Ajout des statistiques de thèmes
+					* Ajout des boutons flèches de navigation dans les annales
+					* Ajout d'une popup à la correction des annales
+					* Correction de bugs mineurs (correction d'annale, thèmes, couleur...)
+				/GEEK :
+                /	*Rien à ajouter
+			$ 2.0
+				% Version 2.0 (Warfarine)
+				_ 10/07/2013
+					* Refonte profonde de l'architecture interne, permettant de nouvelles fonctionnalités !
+					* Ajout des questions posées par tèmes
+					* Ajout de l'historique des notes dans les statistiques
+				/GEEK :
+                /	* Classe BDDTestActivity : la bdd est 4 à 6 fois plus rapide que le parseur !
+			$ 1.5 - Beta
+				% Version 1.5 (Ibuprofène)
+				_ 08/07/2013
+					* Ajout du ChangeLog : Copyright <a href="http://code.google.com/p/android-change-log/">Android Change Log</a> !
+					* Amélioration de l'ActionBar sur les préférences
+					* Ajout de la fonction copier (question, items...)
+					* Ajout de la possibilité d'arrêter une annale et de la reprendre après
+					* La prochaine màj sera beaucoup plus grosse !
+				/GEEK :
+                /	*Rien à ajouter
+			$ 1.4 - Beta
+				% Version 1.4
+				_ 06/07/2013
+					*Refonte totale des icones selon la charte graphique Android
+					*ActionBar : prise en charge de l'overflow avec Android 2.1 et 2.3 !
+					*Ebauche de changeur de Thème graphique
+					*Ajout d'un écran "A propos" avec plus d'infos que la popup
+				/GEEK :
+                /	*optimisation des noms de packages
+			$ 1.3 - Beta
+				% Version 1.3
+				_ 03/07/2013
+					*Ajout du seeker pour naviguer dans une session !
+					*Optimisation du Timer et des différents menus
+					*Ajout d'icones pour l'ActionBar, tentative de gestion de l'overflow (icone de "actionbar surchargée", vous savez, les 3 points verticaux à droite...)
+				/GEEK :
+                /	*Rien à ajouter
+			$ 1.2 - Beta
+				% Version 1.2
+				_ 27/06/2013
+					*Amélioration des statistiques : affichage du meilleur score, graphisme améliorer
+					*Préférences : Ajout d'un popup "A propos"
+					*Préférences : Ajout d'une fonction "E-mail j'ai une idée"
+					*Amélioration d'architecture interne 
+				/GEEK :
+                /	*Rien à ajouter
+			$ 1.1 - Beta
+				% Version 1.1
+				_ 23/06/2013
+					*Ajout du Compte à Rebours --> conditions d'examen
+					*Ajout de quelques informations en vrac dans les paramètres
+				/GEEK :
+                /	*Rien à ajouter
+			$ 1.0 - Beta
+				% Version 1.0 (Paracétamol)
+				_ 21/06/2013
+				! Enfin, la premère version vraiment utilisable !
+					*Correction de bugs : items annulés par le jury
+					*Ajout de l'écran de paramètre : ébauche
+					*Ajout de l'écran de statistiques : dernier score par session
+				/GEEK :
+                /	*ajout du système de licences
+				/	*ajout du QCVide pour mieux gérer les items terminaux (nombe=60 toujours)
+				/	*exclusion de la bdd du buildpath
+			$ 0.7 - Alpha
+				% Version 0.7
+				_ 16/06/2013
+					*Correction de nombreux bugs : navigation, correction...
+				/GEEK :
+                /	*gestion des fragments terminaux
+			$ 0.6 - Alpha
+				% Version 0.6
+				_ 14/06/2013
+					*Ajout de l'ActionBar ! (le menu en haut avec le logo et les icones de menu) --> options "aller à" et "corriger". (<a href="http://actionbarsherlock.com/">ActionBarSherlock</a>, Copyright Jake Wharton)
+					*Choix de la session possible
+					*ajout de couleur selon la correction
+				/GEEK :
+                /	*Rien à ajouter
+			$ 0.5 - Alpha
+				% Version 0.5
+				_ 12/06/2013
+					*ajout du menu "aller à l'item n°"
+					*correction de bugs : correction améliorée
+				/GEEK :
+                /	*ajout d'un premier item vide avec un bouton de correction non fonctionnel
+			$ 0.4 - Alpha
+				% Version 0.4
+				_ 04/06/2013
+					*Apparition des véritables items !! (pour l'instant une seule session disponible)
+					*Ébauche de correction
+				/GEEK :
+                /	*Abandon de la BDD pour un parçage direct !
+				/	*ViewPager avec swipe sur 2 types de fragments : QCM et QCS
+			$ 0.3 - Alpha
+				% Version 0.3
+				_ 25/05/2013
+					*Amélioration de l'architecture interne
+				/GEEK :
+                /	*organisation en packages
+				/	*ébauche de parseur XML
+				/	*Ébauche de modèle pour pattern pseudo MVC
+				/	*Amélioration du SGBDD : cherche dans une année et tout mais bdd vide et pas de feeding ?
+			$ 0.2 - Alpha
+				% Version 0.2
+				_ 23/05/2013
+					*correction de bugs mineurs (dans une version alpha, il y a plus de bugs que de fonctions xD) 
+				/GEEK :
+                /	*en apparence, rien n'a vraiment changé
+				/	*ébauche de fragment dynamique, mais pas encore tout compris
+			$ 0.1 - Alpha
+				% Version 0.1 (Aspirine)
+				_ 10/05/2013
+					*1er lancement de l'application
+					*Tâtonnements sur le thème : "mais comment faire une application pour android..."
+					*Seulement 2 QCS pour le moment (donc pas vraiment de quoi réussir l'internat)
+				/GEEK :
+                /	*2 activités : accueil et annale, dérivant de l'abstraite
+				/	*accueil ne sert à rien : un seul bouton pour appeler annale
+				/	*adaptater et viewpager, avec des DummyFragments contenant une simple String
+				/	*ébauche de SGBDD non utilisée
+				/	*correction statique qui donne le score uniquement
+			$ END_OF_CHANGE_LOG
+	</body>
+</html>

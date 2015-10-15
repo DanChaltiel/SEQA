@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <ListView
+        android:id="@+id/searchList"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/border_right" >
+    </ListView>
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/searchList"
+        android:gravity="center"
+        android:paddingRight="5dp"
+        android:text="Score" />
+
+    <TextView
+        android:id="@+id/timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:paddingLeft="5dp"
+        android:text="Timer" />
+
+    <Button
+        android:id="@+id/goPreviousButton"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/score"
+        android:layout_toRightOf="@id/searchList"
+        android:enabled="false"
+        android:minHeight="13dip"
+        android:minWidth="13dip"
+        android:text="&lt;" />
+
+    <Button
+        android:id="@+id/goNextButton"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/timer"
+        android:minHeight="13dip"
+        android:minWidth="13dip"
+        android:text=">" />
+
+    <SeekBar
+        android:id="@+id/seeker"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/goPreviousButton"
+        android:layout_toLeftOf="@+id/goNextButton"
+        android:layout_toRightOf="@+id/goPreviousButton"
+        android:max="59"
+        android:paddingLeft="9dp"
+        android:paddingRight="9dp" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/seeker"
+        android:layout_toRightOf="@id/searchList" >
+
+    </android.support.v4.view.ViewPager>
+
+</RelativeLayout>
