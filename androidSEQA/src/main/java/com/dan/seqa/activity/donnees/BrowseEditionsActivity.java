@@ -16,6 +16,9 @@ import java.util.Map.Entry;
 
 import com.dan.seqa.outils.Methodes;
 
+/**
+ * Activité de navigation des éditions de QCM
+ */
 public class BrowseEditionsActivity extends AbstractActivity{
 
 	@Override

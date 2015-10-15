@@ -35,6 +35,9 @@ import java.util.List;
 
 import com.dan.seqa.outils.Methodes;
 
+/**
+ * Activité de statistique spécifique à une session ou à une catégorie
+ */
 public class StatistiquesDetailActivity extends AbstractActivity{
 	
 	private ListView detailListView;

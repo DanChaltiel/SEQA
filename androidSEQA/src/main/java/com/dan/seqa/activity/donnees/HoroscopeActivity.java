@@ -19,6 +19,11 @@ import java.util.TreeMap;
 
 import com.dan.seqa.outils.Methodes;
 
+/**
+ * Activité totalement ridicule calculant les probabilité de réponse
+ * Aussi sérieuse que les prédictions du même nom, donc.
+ * Après décembre 2014, les 2 meilleurs sont ACD et ABDE avec 74/1293
+ */
 public class HoroscopeActivity extends AbstractActivity{
 	
 	private int totalQCS;
@@ -78,8 +83,8 @@ public class HoroscopeActivity extends AbstractActivity{
 			    qcmLayout.addView(txt2);
 			}		
 		    txt.setText("QCM à "+(i+1)+" entrée"+s+" : "+subTotal+" ("+(int)(100*(double)subTotal/totalQCM)+"%)");
-			txt.setTextAppearance(this, android.R.attr.textAppearanceLarge);
-		}		
+			txt.setTextAppearance(this, android.R.style.TextAppearance_DeviceDefault_Large);
+		}
 		TextView separatorQCM = new TextView(this);
 		separatorQCM.setText("----------------");
 		qcmLayout.addView(separatorQCM);

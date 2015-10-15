@@ -13,7 +13,8 @@ import java.util.List;
 
 public abstract class AbstractDAO {
 	// Si je décide de la mettre à jour, il faudra changer cet attribut
-	protected final static int VERSION = 10;
+	public final static int VERSION = 12;
+    //TODO stocker chaque session dans un fichier sql différent !! et mettre à jour si on a pas la session !!
 //	Permettrait d'avoir la bdd sur la carte SD, donc plus visible pour debugguer...
 //	protected final static String NOM_BDD = AccueilActivity.MODE_ADMIN?Environment.getExternalStorageDirectory().getPath() +"database_seqa.db":"database_seqa.db";
 	protected final static String NOM_BDD = "database_seqa.db";

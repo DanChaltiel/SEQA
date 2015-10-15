@@ -3,7 +3,7 @@ package com.dan.seqa.activity;
 import android.content.Context;
 import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,11 +12,10 @@ import com.dan.newseqa.R;
 import com.dan.seqa.modeles.SharedMenu;
 
 /**
- * Gère le menu commun
- * @author DanC
- *
+ * Activité de base
+ * Prend en charge le menu commun à toutes les autres activités
  */
-public class AbstractActivity extends ActionBarActivity{
+public class AbstractActivity extends AppCompatActivity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

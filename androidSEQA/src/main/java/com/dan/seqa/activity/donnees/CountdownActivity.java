@@ -25,6 +25,11 @@ import java.util.concurrent.TimeUnit;
 
 import com.dan.seqa.outils.Methodes;
 
+/**
+ * Activité décomptant le temps restant avant le concours.
+ * Met la chanson dans la tête et le stress au ventre
+ * TODO : mettre à jour la date automatiquement...
+ */
 public class CountdownActivity extends AbstractActivity{
 
 	private final static String DATE_CONCOURS = "17/12/2014 12h30";

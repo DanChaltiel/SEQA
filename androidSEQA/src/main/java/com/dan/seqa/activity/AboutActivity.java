@@ -9,6 +9,7 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 import com.dan.newseqa.R;
+import com.dan.seqa.bdd.AbstractDAO;
 import com.dan.seqa.outils.Codenames;
 import com.dan.seqa.outils.Methodes;
 
@@ -17,7 +18,11 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 
-
+/**
+ * Activité appelée depuis les préférences
+ * Liste les versions de l'appli, du smartphone etc.
+ * Utile en cas de bug utilisateur pour avoir un contexte
+ */
 public class AboutActivity extends AbstractActivity{
 
     private String versionSEQA, versionAndroid;
@@ -83,6 +88,7 @@ public class AboutActivity extends AbstractActivity{
 		entrees.add(new String[]{"Date d'installation", ""+timeFirstInstallation});
 		entrees.add(new String[]{"Date de dernière mise à jour", ""+timeLastUpdated});
 		entrees.add(new String[]{"Version d'Android", versionAndroid});
+        entrees.add(new String[]{"Version de la base de données", ""+ AbstractDAO.VERSION});
 		if(AccueilActivity.MODE_ADMIN)
 			entrees.add(new String[]{"Infos Admin", infosAdmin});
 		Calendar c = Calendar.getInstance();

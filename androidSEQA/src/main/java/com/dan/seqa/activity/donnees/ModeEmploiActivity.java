@@ -28,6 +28,10 @@ import java.util.Map;
 
 import com.dan.seqa.outils.Methodes;
 
+/**
+ * Activité de mode d'emploi
+ * Dépend de modedemploi.json dans les assets
+ */
 public class ModeEmploiActivity extends AbstractActivity{
 
 

@@ -8,7 +8,10 @@ import android.view.Menu;
 
 import com.dan.seqa.bdd.DatabaseFeeder;
 
-
+/**
+ * Activité qui teste si la base de donnée est à jour, qui la met à jour si
+ * besoin puis qui lance l'activité d'accueil
+ */
 public class FirstActivity extends AbstractActivity{
 
 	// Hashkey Facebook : 0gkN5qZC5cTK06Zpsdo5wbkh29E=

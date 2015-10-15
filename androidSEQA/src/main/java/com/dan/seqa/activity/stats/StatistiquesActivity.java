@@ -12,6 +12,11 @@ import com.dan.newseqa.R;
 import com.dan.seqa.activity.AbstractActivity;
 import com.dan.seqa.adapters.StatsPagerAdapter;
 
+/**
+ * Activité des statistiques de résultats aux annales
+ * 2 onglets : sessions et catégories
+ * Appelle StatistiquesDetailActivity quand on sélectionne une session ou une catégorie
+ */
 public class StatistiquesActivity extends AbstractActivity implements TabListener{
 	//CONSTANTES
 	public final static String EXTRA_NOM_SESSION = "com.dan.seqa.nomSession";

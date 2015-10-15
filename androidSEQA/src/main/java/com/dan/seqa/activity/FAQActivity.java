@@ -19,6 +19,10 @@ import java.util.List;
 
 import com.dan.seqa.outils.Methodes;
 
+/**
+ * Activité de Foire aux Questions
+ * Dépend de faq.json dans les assets
+ */
 public class FAQActivity extends AbstractActivity{
 
 	private ListView vue;

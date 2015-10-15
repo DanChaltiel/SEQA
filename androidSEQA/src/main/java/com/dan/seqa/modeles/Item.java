@@ -9,7 +9,10 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-
+/**
+ * QCM (ou QCS), avec sa catégorie, sa question, ses 5 items et sa correction
+ * Un commentaire peut lui être ajouté par édition
+ */
 public class Item implements Parcelable {
 	
 	public final static String QCM = "QCM";

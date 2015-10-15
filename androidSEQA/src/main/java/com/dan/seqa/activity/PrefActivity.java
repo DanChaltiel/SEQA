@@ -19,7 +19,23 @@ import com.dan.seqa.outils.ChangeLog;
 
 import com.dan.seqa.outils.Methodes;
 
-
+/**
+ * Activité des préférences
+ * Réglages :
+ *      * surlignage des mots clés
+ *      * randomisation des items
+ *      * temps de calcul de la meilleure note
+ *      * note minimale à compter pour le calcul
+ *      * choix du thème graphique
+ * Permet aussi d'accéder :
+ *      * à la FAQ,
+ *      * au changelog
+ *      * au mode d'emploi
+ *      * à l'envoi d'email (idée, bug...)
+ *      * au like facebook
+ *      * à l'activité "à propos"
+ *
+ */
 @SuppressWarnings("deprecation") //Vu que la classe entière est dépréciée et qu'il n'y a pas de bibliothèque de compatibilité
 public class PrefActivity extends PreferenceActivity {	
 

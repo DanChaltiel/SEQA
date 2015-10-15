@@ -47,11 +47,7 @@ public class DatabaseFeeder{
 		//si la bdd est vide ou inexistante, on nourrit	
 		ilFautNourrirLaBdd=databaseCount==0 || databaseCount==AbstractDAO.INEXISTANT_TABLE;
 		if (ilFautNourrirLaBdd)
-			Methodes.alert("BDD vide ou inexistante");		
-		//		else if (databaseCount<MAX_ITEMS_NUMBER){
-		//			ilFautNourrirLaBdd=true;
-		//			Methodes.alert("BDD incomplete");
-		//		}
+			Methodes.alert("BDD vide ou inexistante");
 		Long fin = System.currentTimeMillis();
 		String temps =""+(fin-debut);
 		Methodes.alert("Check de la base de donnée : OK (temps="+temps+"ms, count="+databaseCount+")");

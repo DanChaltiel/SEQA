@@ -3,7 +3,7 @@
     package="com.dan.newseqa"
     android:versionCode="34"
     android:versionName="3.1">
-
+    <meta-data android:value="databaseLength" android:name="foo"/>
     <supports-screens
         android:largeScreens="true"
         android:normalScreens="true"
@@ -38,10 +38,6 @@
         <activity
             android:name="com.dan.seqa.activity.annales.AnnaleThemeActivity"
             android:label="@string/label_AnnaleThemeActivity"
-            android:parentActivityName="com.dan.seqa.activity.AccueilActivity"/>
-        <activity
-            android:name="com.dan.seqa.activity.donnees.MnemotechniqueActivity"
-            android:label="@string/label_MnemotechniqueActivity"
             android:parentActivityName="com.dan.seqa.activity.AccueilActivity"/>
         <activity
             android:name="com.dan.seqa.activity.stats.StatistiquesActivity"

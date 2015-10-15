@@ -34,7 +34,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
+/**
+ * Activité d'accueil en haut de pile
+ * Liste les boutons d'accès aux autres activités
+ *
+ */
 public class AccueilActivity extends AbstractActivity{
 
 	//CONSTANTES GLOBALES

@@ -32,6 +32,13 @@ import java.util.ArrayList;
 
 import com.dan.seqa.outils.Methodes;
 
+/**
+ * Activité de recherche de mot dans les annales
+ * La recherche concerne tous les champs (question, items, catégorie...)
+ * Cliquer sur un résultat amène directement à l'édition du QCM sélectionné
+ * Possibilité d'afficher ou non la réponse du QCM dans la liste (défaut=non)
+ * Classes filles de lite extensible : ItemsExpandableAdapter, ExpandListChild et ExpandListGroup
+ */
 public class RechercheActivity extends AbstractActivity{
 
 
