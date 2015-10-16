@@ -55,14 +55,14 @@ public class StatistiqueSessionFragment extends Fragment{
 
 
 	private List<StatModel> getList(){
-		List<StatModel> rtnListe = new ArrayList<StatModel>();
+		List<StatModel> rtnListe = new ArrayList<>();
 		dao = new StatsDAO(getActivity());
 		List<String> sessionsList = dao.getDifferentSessions();
 		
 		//on parcourt
 		for(int i = 0 ; i < sessionsList.size() ; i++) {
 			StatModel tmpModel;
-			int essaisTotal = dao.getSpecificCount(DatabaseHandler.STATS_TABLE_NAME, sessionsList.get(i));
+			int essaisTotal = dao.getSpecificCount(StatsDAO.TABLE_NAME, sessionsList.get(i));
 			if(essaisTotal!=0){
 				Stat best=dao.getBestOfSession(sessionsList.get(i));
 				final SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());

@@ -12,8 +12,13 @@ import com.dan.seqa.modeles.Stat;
 import java.util.ArrayList;
 
 public class StatsDAO extends AbstractDAO{
+    public static final String 	KEY = "id",
+            SESSION = "session",
+            DATE = "date",
+            SCORE_RATIO = "scoreRatio",
+            SCORE_TOTAL = "scoreTotal";
+    public static final String TABLE_NAME = "Statistiques";
 
-	private final static String TABLE_NAME=DatabaseHandler.STATS_TABLE_NAME;
 	private int noteMinimale;
 
 	public StatsDAO(Context pContext) {
@@ -24,21 +29,23 @@ public class StatsDAO extends AbstractDAO{
 
 	public void addStat(Stat stat){
 		ContentValues value = new ContentValues();
-		value.put(DatabaseHandler.STATS_DATE, stat.getTimestamp());
-		value.put(DatabaseHandler.STATS_SESSION, stat.getSession());
-		value.put(DatabaseHandler.STATS_SCORE_RATIO, stat.getScoreRatio());
-		value.put(DatabaseHandler.STATS_SCORE_TOTAL, stat.getScoreTotal());
-		mDb.insert(DatabaseHandler.STATS_TABLE_NAME, null, value);
+		value.put(DATE, stat.getTimestamp());
+		value.put(SESSION, stat.getSession());
+		value.put(SCORE_RATIO, stat.getScoreRatio());
+		value.put(SCORE_TOTAL, stat.getScoreTotal());
+		mDb.insert(TABLE_NAME, null, value);
 	}
 
-	/**
-	 * Récupère la liste de statistiques de cette session
-	 * @param pSession
-	 */
+    /**
+     * Récupère la liste de statistiques de cette session
+     * @param pSession le nom de la session
+     * @param tri le champs sur lequel on trie
+     * @return une liste de Stat
+     */
 	public ArrayList<Stat> getAllStatsOfSession(String pSession, String tri) {
-		ArrayList<Stat> tmp = new ArrayList<Stat>();
-		Cursor cursor = mDb.rawQuery("select * from " + TABLE_NAME + 
-				" where "+DatabaseHandler.STATS_SESSION+" = ?" +
+		ArrayList<Stat> tmp = new ArrayList<>();
+		Cursor cursor = mDb.rawQuery("select * from " + TABLE_NAME +
+				" where "+SESSION+" = ?" +
 				" order by "+tri+" desc",
 				new String[]{pSession});
 		while (cursor.moveToNext()) {
@@ -54,15 +61,15 @@ public class StatsDAO extends AbstractDAO{
 
 	/**
 	 * Récupère la statistique du meilleur ratio pour cette session
-	 * @param pSession
+	 * @param pSession la session
 	 * @return Un objet stats si la session est peuplée<br/>
 	 * 	null sinon
 	 */
 	public Stat getBestOfSession(String pSession) {
 		Cursor cursor = mDb.rawQuery(
 				"select * from " + TABLE_NAME + 
-				" where "+DatabaseHandler.STATS_SESSION+" = ? " +
-				" and "+DatabaseHandler.STATS_SCORE_RATIO+" = (select max("+DatabaseHandler.STATS_SCORE_RATIO+") from " + TABLE_NAME + " where "+DatabaseHandler.STATS_SESSION+" = ? )",
+				" where "+SESSION+" = ? " +
+				" and "+SCORE_RATIO+" = (select max("+SCORE_RATIO+") from " + TABLE_NAME + " where "+SESSION+" = ? )",
 				new String[]{pSession, pSession});
 		cursor.moveToNext();
 		if(cursor.getCount()==0 || cursor.isNull(4))
@@ -84,27 +91,33 @@ public class StatsDAO extends AbstractDAO{
 
 	/**
 	 * Calcule la moyenne sur le temps défini
-	 * @param pSession
+	 * @param pSession la session
 	 * @param temps : semaine/mois/an
 	 * @return le tuple contenant le score et le compte
 	 */	
 	public ScoreEtCompte getMoyenne(String pSession, String temps) {
 		long timestampPrecedent=0;
-		if(temps.equals("semaine"))
-			timestampPrecedent = System.currentTimeMillis()-(1000l*3600l*24l*7l);//7j*24h*3600sec*1000ms
-		else if(temps.equals("mois"))
-			timestampPrecedent = System.currentTimeMillis()-(1000l*3600l*24l*30l);//on met tout en long sinon on calcule sur des int et ça plante
-		else if(temps.equals("an"))
-			timestampPrecedent = System.currentTimeMillis()-(1000l*3600l*24l*365l);
-		else if(temps.equals("total"))
-			timestampPrecedent = 0;
+        switch (temps) {
+            case "semaine":
+                timestampPrecedent = System.currentTimeMillis() - (1000l * 3600l * 24l * 7l);//7j*24h*3600sec*1000ms
+                break;
+            case "mois":
+                timestampPrecedent = System.currentTimeMillis() - (1000l * 3600l * 24l * 30l);//on met tout en long sinon on calcule sur des int et ça plante
+                break;
+            case "an":
+                timestampPrecedent = System.currentTimeMillis() - (1000l * 3600l * 24l * 365l);
+                break;
+            case "total":
+                timestampPrecedent = 0;
+                break;
+        }
 		
 		double minRatio = noteMinimale/120.0;
 		Cursor cursor = mDb.rawQuery(
-					"select count("+DatabaseHandler.STATS_KEY+"), avg("+DatabaseHandler.STATS_SCORE_RATIO+") from " + TABLE_NAME + 
-					" where "+DatabaseHandler.STATS_SESSION+" = ? " +
-					" and "+DatabaseHandler.STATS_DATE+" >= ? " +
-					" and "+DatabaseHandler.STATS_SCORE_RATIO+">=? " +
+					"select count("+KEY+"), avg("+SCORE_RATIO+") from " + TABLE_NAME +
+					" where "+SESSION+" = ? " +
+					" and "+DATE+" >= ? " +
+					" and "+SCORE_RATIO+">=? " +
 					"", new String[]{pSession, ""+timestampPrecedent, ""+minRatio});
 		cursor.moveToFirst();
 		int count =cursor.getInt(0);
@@ -129,7 +142,7 @@ public class StatsDAO extends AbstractDAO{
 				return CLOSEN_DATABASE;
 			Cursor mCount = mDb.rawQuery("select count(*) " +
 					"from "+TABLE_NAME+" " +
-					"where "+DatabaseHandler.STATS_SCORE_RATIO+"*"+DatabaseHandler.STATS_SCORE_TOTAL+">? " +
+					"where "+SCORE_RATIO+"*"+SCORE_TOTAL+">? " +
 					";", new String[] {""+noteMinimale});
 			mCount.moveToFirst();
 			int count= mCount.getInt(0);
@@ -161,7 +174,7 @@ public class StatsDAO extends AbstractDAO{
 
 			Cursor mCount = mDb.rawQuery("select count(*)" +
 					" from " + pTable + 
-					" where "+DatabaseHandler.STATS_SESSION+" = ?",
+					" where "+SESSION+" = ?",
 					new String[]{pSession});
 			mCount.moveToFirst();
 			int count= mCount.getInt(0);

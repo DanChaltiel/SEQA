@@ -4,9 +4,14 @@ import android.content.Context;
 import android.database.Cursor;
 
 import com.dan.seqa.modeles.Item;
+import com.dan.seqa.outils.Methodes;
 
 import java.util.ArrayList;
 
+/**
+ * Data Access Object des annales non modifiées
+ *
+ */
 public class AnnalesDAO extends AbstractDAO{
 
 	public static final String 	
@@ -14,35 +19,13 @@ public class AnnalesDAO extends AbstractDAO{
 		ANNEE = "annee", REGION = "region", NUMERO = "numero",
 		QUESTION = "question", CATEGORIE = "categorie",
 		QCM_A = "qcmA", QCM_B = "qcmB", QCM_C = "qcmC", QCM_D = "qcmD", QCM_E = "qcmE",
-		CORRECTION = "correction";	
-	public static final String TABLE_NAME = "Annales";	
+		CORRECTION = "correction";
+	public static final String TABLE_NAME = "Annales";
 
-
-	public AnnalesDAO(Context pContext) {
+    public AnnalesDAO(Context pContext) {
 		super(pContext);
 		super.mDb = open();
 	}
-
-
-	/**
-	 * @param item l'item à ajouter à la base
-	 */
-//	public void ajouter(Item item) {
-//		ContentValues value = new ContentValues();
-//		value.put(TYPE, item.getType());
-//		value.put(ANNEE, item.getAnnee());
-//		value.put(REGION, item.getRegion());
-//		value.put(NUMERO, item.getNumero());
-//		value.put(CATEGORIE, item.getCategorie());
-//		value.put(QUESTION, item.getQuestion());
-//		value.put(QCM_A, item.getQcmA());
-//		value.put(QCM_B, item.getQcmB());
-//		value.put(QCM_C, item.getQcmC());
-//		value.put(QCM_D, item.getQcmD());
-//		value.put(QCM_E, item.getQcmE());
-//		value.put(CORRECTION, item.getCorrection());
-//		mDb.insert(TABLE_NAME, null, value);
-//	}
 
 	/**
 	 *
@@ -72,13 +55,12 @@ public class AnnalesDAO extends AbstractDAO{
 		}
 
 		cursor.close();
-//		Methodes.alert("selectBySession() fait en : "+(System.currentTimeMillis()-debut)+"ms");
 		return tmp;
 	}
 
-		/**
-         * @return la liste des items composant ayant le theme donné
-         */
+    /**
+     * @return la liste des items composant ayant le theme donné
+     */
 	public ArrayList<Item> selectByTheme(String pTheme) {
 		ArrayList<Item> tmp = new ArrayList<>();
 		Cursor cursor = mDb.rawQuery("select * from " + TABLE_NAME + 
@@ -104,13 +86,19 @@ public class AnnalesDAO extends AbstractDAO{
 		return tmp;
 	}
 
-	public Item selectItem(Item normalItem){
+    /**
+     * Interface entre les QCM édités ou non. <br/>
+     * Sélectionne le QCM de mêmes année, région et numéro
+     * @param editedItem l'item édité
+     * @return l'item non édité
+     */
+	public Item selectItem(Item editedItem){
 		Cursor cursor = mDb.query(
-				TABLE_NAME, 
-				null,
-				ANNEE+"=? and "+REGION+"=? and "+NUMERO+"=?", 
-				new String[] {normalItem.getAnnee(),normalItem.getRegion(),normalItem.getNumero()}, 
-				null, null, null);
+                TABLE_NAME,
+                null,
+                ANNEE + "=? and " + REGION + "=? and " + NUMERO + "=?",
+                new String[]{editedItem.getAnnee(), editedItem.getRegion(), editedItem.getNumero()},
+                null, null, null);
 		if(cursor.getCount()!=1)
 			return null;
 		cursor.moveToNext();
@@ -130,11 +118,11 @@ public class AnnalesDAO extends AbstractDAO{
 		return rtn;
 	}
 
-    public Item selectItem(String pAnnee, String pRegion, String pNumero){
-        Item dummy = new Item(pAnnee, pRegion, pNumero, null, null, null, null, null, null, null, null, null);
-        return selectItem(dummy);
-    }
-
+    /**
+     * Cherche le keyWord dans tous les champs des items
+     * @param keyWord le keyWord
+     * @return liste des items contenant le keyWord quelque part
+     */
 	public ArrayList<Item> selectByKeyWord(String keyWord) {
 		ArrayList<Item> tmp = new ArrayList<>();
 		Cursor cursor = mDb.rawQuery("select * from " + TABLE_NAME + 
@@ -165,4 +153,21 @@ public class AnnalesDAO extends AbstractDAO{
 		cursor.close();
 		return tmp;
 	}
+
+    /**
+     * Methode de test de la base de données pour les mises à jour
+     * @param session la session sous la forme anneeRegion
+     * @return true/false
+     */
+    public boolean sessionExists(String session){
+        String annee = session.substring(0,4);
+        String region = session.length()>4?session.substring(4, 5):"";
+
+        String[] columns = {KEY};
+        String where = ANNEE + " = ? and "+ REGION + " = ?";
+        String[] whereArgs = {annee, region};
+        Cursor cursor = mDb.query(false, TABLE_NAME, columns, where, whereArgs, null, null, null, null);
+        Methodes.alert(annee+region+" : exists="+(cursor.getCount()>0));
+        return cursor.getCount()>0;
+    }
 }

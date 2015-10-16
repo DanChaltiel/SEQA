@@ -25,16 +25,14 @@ import com.dan.seqa.outils.Methodes;
  */
 public class FAQActivity extends AbstractActivity{
 
-	private ListView vue;
-
-	@Override
+    @Override
 	public void onCreate(Bundle savedInstanceState) {
 		setTheme(getThemeFromPreferences(this));
 		super.onCreate(savedInstanceState);	
 		setContentView(R.layout.activity_liste);
-		vue = (ListView) findViewById(R.id.liste); 
+        ListView vue = (ListView) findViewById(R.id.liste);
 
-		final List<HashMap<String, String>> liste = new ArrayList<HashMap<String, String>>();
+		final List<HashMap<String, String>> liste = new ArrayList<>();
 		
 		try {
 			InputStream is = getAssets().open("faq.json");
@@ -53,11 +51,11 @@ public class FAQActivity extends AbstractActivity{
 			Methodes.alert("IOException : "+e.getMessage());
 		}
 		
-		vue.setAdapter(new SimpleAdapter(this,  
-				liste, 
-				R.layout.liste_simple,//Layout par défaut pour avoir deux textes l'un au-dessus de l'autre
-				new String[] {"QUESTION", "REPONSE"}, //clés entrée dans la méthode privée
-				new int[] {android.R.id.text1, android.R.id.text2 })); //id par défaut du package android
+		vue.setAdapter(new SimpleAdapter(this,
+                liste,
+                R.layout.liste_simple,//Layout par défaut pour avoir deux textes l'un au-dessus de l'autre
+                new String[]{"QUESTION", "REPONSE"}, //clés entrée dans la méthode privée
+                new int[]{android.R.id.text1, android.R.id.text2})); //id par défaut du package android
 
 	}
 }

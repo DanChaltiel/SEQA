@@ -12,10 +12,6 @@ android {
     lintOptions {
         disable 'InvalidPackage'
     }
-    buildTypes {
-        release {
-        }
-    }
 }
 
 dependencies {

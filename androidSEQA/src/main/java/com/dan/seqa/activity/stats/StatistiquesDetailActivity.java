@@ -42,7 +42,7 @@ public class StatistiquesDetailActivity extends AbstractActivity{
 	
 	private ListView detailListView;
 	private String nomSession;
-	private String optionTri = DatabaseHandler.STATS_SCORE_RATIO;
+	private String optionTri = StatsDAO.SCORE_RATIO;
 	private SharedPreferences preferences;
 	private BaseAdapter adapter;
 	private List<HashMap<String, String>> listeForAdapter;		
@@ -96,12 +96,12 @@ public class StatistiquesDetailActivity extends AbstractActivity{
 	}
 
 	private List<HashMap<String, String>> getList(){
-		List<HashMap<String, String>> rtnListe = new ArrayList<HashMap<String, String>>();
+		List<HashMap<String, String>> rtnListe = new ArrayList<>();
 
 		StatsDAO dao = new StatsDAO(this);
 		ArrayList<Stat> statistiques = dao.getAllStatsOfSession(nomSession, optionTri);
 		for (Stat stat : statistiques) {
-			HashMap<String, String> element = new HashMap<String, String>();
+			HashMap<String, String> element = new HashMap<>();
 			element.put("date", stat.getFormattedDate());
 			int noteMinimale = preferences.getInt("minStatsValue", 1);
 			String resultat =  stat.getNote()>noteMinimale?stat.getFormattedScore():"note trop basse (<"+noteMinimale+")";
@@ -122,17 +122,17 @@ public class StatistiquesDetailActivity extends AbstractActivity{
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		if(SharedMenu.onOptionsItemSelected(item, this) == false) {
+		if(!SharedMenu.onOptionsItemSelected(item, this)) {
 			switch (item.getItemId()) {
 			case R.id.menu_share: //TODO partage des scores...
 				Toast.makeText(getApplicationContext(), "Option de partage en développement...", Toast.LENGTH_SHORT).show();
 				return true;
 			case R.id.menu_trier_date: 
-				optionTri=DatabaseHandler.STATS_DATE;
+				optionTri=StatsDAO.DATE;
 				onResume();
 				return true;
 			case R.id.menu_trier_note: 
-				optionTri=DatabaseHandler.STATS_SCORE_RATIO;
+				optionTri=StatsDAO.SCORE_RATIO;
 				onResume();
 				return true;
 			}
@@ -143,14 +143,14 @@ public class StatistiquesDetailActivity extends AbstractActivity{
 	class GraphesView extends View {
 		private final static int padding = 30;
 		private Paint paint;
-		private List<Double> ratioList =  new ArrayList<Double>();
+		private List<Double> ratioList = new ArrayList<>();
 
 		public GraphesView(Context context, String subject) {
 			super(context);
 			paint = new Paint();         
 
 			StatsDAO dao = new StatsDAO(StatistiquesDetailActivity.this);
-			ArrayList<Stat> blabla = dao.getAllStatsOfSession(subject, DatabaseHandler.STATS_DATE); //pour le graphe on trie toujours par date
+			ArrayList<Stat> blabla = dao.getAllStatsOfSession(subject, StatsDAO.DATE); //pour le graphe on trie toujours par date
 			for (Stat stat : blabla) {
 				ratioList.add(stat.getScoreRatio());
 			}

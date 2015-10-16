@@ -3,7 +3,7 @@
     package="com.dan.newseqa"
     android:versionCode="34"
     android:versionName="3.1">
-    <meta-data android:value="databaseLength" android:name="foo"/>
+
     <supports-screens
         android:largeScreens="true"
         android:normalScreens="true"

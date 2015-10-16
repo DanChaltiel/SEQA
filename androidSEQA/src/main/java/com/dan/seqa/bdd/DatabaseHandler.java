@@ -10,7 +10,6 @@ import com.dan.seqa.outils.Methodes;
 /**
  * Le gestionnaire de la base de données <br/> 
  * La version est dans AbstractDAO
- * <br/><b>Extends:</b> <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SQLiteOpenHelper
  * @author Dan
  */
 public class DatabaseHandler extends SQLiteOpenHelper {
@@ -54,20 +53,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	/*
 	 * TABLE DES STATISTIQUES
 	 */
-	public static final String 	STATS_KEY = "id",
-			STATS_SESSION = "session",
-			STATS_DATE = "date",
-			STATS_SCORE_RATIO = "scoreRatio",
-			STATS_SCORE_TOTAL = "scoreTotal";	
-	public static final String STATS_TABLE_NAME = "Statistiques";
 	public static final String CREATE_STATS_TABLE =
-			"CREATE TABLE IF NOT EXISTS " + STATS_TABLE_NAME + " (" +
-					STATS_KEY + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-					STATS_SESSION + " VARCHAR(5), " + //4 année + 1 N/S
-					STATS_DATE + " INTEGER, " + 
-					STATS_SCORE_RATIO + " REAL, " + 
-					STATS_SCORE_TOTAL + " REAL);";
-	public static final String DROP_STATS_TABLE = "DROP TABLE IF EXISTS " + STATS_TABLE_NAME + ";";
+			"CREATE TABLE IF NOT EXISTS " + StatsDAO.TABLE_NAME + " (" +
+					StatsDAO.KEY + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                    StatsDAO.SESSION + " VARCHAR(5), " + //4 année + 1 N/S
+                    StatsDAO.DATE + " INTEGER, " +
+                    StatsDAO.SCORE_RATIO + " REAL, " +
+                    StatsDAO.SCORE_TOTAL + " REAL);";
+	public static final String DROP_STATS_TABLE = "DROP TABLE IF EXISTS " + StatsDAO.TABLE_NAME + ";";
 
 	//VARIABLES
 
@@ -78,7 +71,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		Methodes.alert("Création des tables de la Base de Données");
+		Methodes.alert("DatabaseHandler.onCreate() - Création des tables de la Base de Données");
 		db.execSQL(CREATE_ANNALE_TABLE);
 		db.execSQL(CREATE_EDITED_ANNALE_TABLE);
 		db.execSQL(CREATE_STATS_TABLE);
@@ -88,22 +81,22 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		Methodes.alert("Mise à jour des tables de la Base de Données");
 //		db.execSQL(DROP_EDITED_ANNALE_TABLE);
-		db.execSQL(CREATE_EDITED_ANNALE_TABLE);
-		resetDB(db);
-		onCreate(db);
+//		db.execSQL(CREATE_EDITED_ANNALE_TABLE);
+//		resetDB(db);
+//		onCreate(db);
 	}
 
 	@Override
 	public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		Methodes.alert("DownGrade des tables de la Base de Données");
 //		db.execSQL(DROP_EDITED_ANNALE_TABLE);
-		db.execSQL(CREATE_EDITED_ANNALE_TABLE);
-		resetDB(db);
-		onCreate(db);
+//		db.execSQL(CREATE_EDITED_ANNALE_TABLE);
+//		resetDB(db);
+//		onCreate(db);
 	}
 
 	private static void resetDB(SQLiteDatabase db) {
-		db.execSQL(DROP_ANNALE_TABLE);
+//		db.execSQL(DROP_ANNALE_TABLE);
 //		if(AccueilActivity.ERASE_STATS)
 //			db.execSQL(DROP_STATS_TABLE);
 		//Normalement on drop pas les stats, sinon on perd tout !

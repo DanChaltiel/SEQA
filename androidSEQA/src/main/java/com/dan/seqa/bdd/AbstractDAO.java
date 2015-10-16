@@ -14,9 +14,6 @@ import java.util.List;
 public abstract class AbstractDAO {
 	// Si je décide de la mettre à jour, il faudra changer cet attribut
 	public final static int VERSION = 12;
-    //TODO stocker chaque session dans un fichier sql différent !! et mettre à jour si on a pas la session !!
-//	Permettrait d'avoir la bdd sur la carte SD, donc plus visible pour debugguer...
-//	protected final static String NOM_BDD = AccueilActivity.MODE_ADMIN?Environment.getExternalStorageDirectory().getPath() +"database_seqa.db":"database_seqa.db";
 	protected final static String NOM_BDD = "database_seqa.db";
 	/** CLOSEN_DATABASE=-1<br/> INEXISTANT_TABLE=-2	*/
 	protected final static int CLOSEN_DATABASE=-1, INEXISTANT_TABLE=-2;
@@ -40,7 +37,7 @@ public abstract class AbstractDAO {
 	 * Utiliser une constante de {@link AnnalesDAO} ou de {@link EditedAnnalesDAO}
 	 */
 	public List<String> getDifferent(String anneeOrCategorie) {
-		List<String> tmp = new ArrayList<String>();
+		List<String> tmp = new ArrayList<>();
 		Cursor cursor= mDb.rawQuery("select distinct " + anneeOrCategorie+" " +
 				"from "+AnnalesDAO.TABLE_NAME,
 				null);
@@ -81,7 +78,7 @@ public abstract class AbstractDAO {
 	 * Liste les sessions possibles
 	 */
 	public List<String> getDifferentSessions() {
-		List<String> tmp = new ArrayList<String>();
+		List<String> tmp = new ArrayList<>();
 		Cursor cursor; 
 		cursor= mDb.rawQuery("select " + AnnalesDAO.ANNEE+", " + AnnalesDAO.REGION+" "+
 				"from " + AnnalesDAO.TABLE_NAME +" " +
@@ -155,14 +152,14 @@ public abstract class AbstractDAO {
 	
 	@Deprecated
 	public void megaReset(){
-		mDb.execSQL(DatabaseHandler.DROP_ANNALE_TABLE);
-		mDb.execSQL(DatabaseHandler.CREATE_ANNALE_TABLE);
+//		mDb.execSQL(DatabaseHandler.DROP_ANNALE_TABLE);
+//		mDb.execSQL(DatabaseHandler.CREATE_ANNALE_TABLE);
 	}
 	
 	public void dropAllTables(){
-		mDb.execSQL(DatabaseHandler.DROP_ANNALE_TABLE);
-		if(AccueilActivity.ERASE_STATS)
-			mDb.execSQL(DatabaseHandler.DROP_STATS_TABLE);
+//		mDb.execSQL(DatabaseHandler.DROP_ANNALE_TABLE);
+//		if(AccueilActivity.ERASE_STATS)
+//			mDb.execSQL(DatabaseHandler.DROP_STATS_TABLE);
 	}
 
 	

@@ -55,14 +55,14 @@ public class StatistiqueThemeFragment extends Fragment{
 	}
 
 	private List<StatModel> getList(){
-		List<StatModel> rtnListe = new ArrayList<StatModel>();
+		List<StatModel> rtnListe = new ArrayList<>();
 		dao = new StatsDAO(getActivity());
 		List<String> themesList = dao.getDifferent(AnnalesDAO.CATEGORIE);
 		
 		//on parcourt
 		for(int i = 0 ; i < themesList.size() ; i++) {
 			StatModel tmpModel;
-			int essaisTotal = dao.getSpecificCount(DatabaseHandler.STATS_TABLE_NAME, themesList.get(i));
+			int essaisTotal = dao.getSpecificCount(StatsDAO.TABLE_NAME, themesList.get(i));
 			if(essaisTotal!=0){
 				final SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
 				String statsTimeChoice = preferences.getString("statsTimeChoice", "mois");

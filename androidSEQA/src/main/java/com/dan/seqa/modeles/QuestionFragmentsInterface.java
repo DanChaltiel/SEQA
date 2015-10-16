@@ -4,7 +4,7 @@ import android.view.View;
 
 
 public interface QuestionFragmentsInterface{
-	public Item getItem();
-	public View getView();
-	public void setGoodColor();
+	Item getItem();
+	View getView();
+	void setGoodColor();
 }
